@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const components = [
+  {
+    title: "Códigos de barras",
+    description: "Diferentes códigos de barras para representar información.",
+    href: "barcode"
+  },
+  {
+    title: "Grafica",
+    description: "Componente para la representación de graficas",
+    href: "/charts"
+  },
+  {
+    title: "",
+    description: "",
+    href: "/"
+  }
+];
 ---
 
 <Layout>
-	<Welcome />
+	<main class="min-h-screen bg-background">
+		<div class="container mx-auto px-4 py-16">
+		  <div class="text-center mb-16">
+			<h1 class="text-4xl font-bold tracking-tight mb-4">
+			  Componentes
+			</h1>
+			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+			  Explora la coleción de componentes de Tailwind UI - React y encuentra el que mejor se adapte a tus necesidades.
+			</p>
+		  </div>
+		  <div class="grid md:grid-cols-3 gap-6">
+			{components.map((component) => (
+				<Card 
+				title={component.title}
+				href={component.href}
+				description={component.description}
+				/>
+			))}
+		  </div>
+		</div>
+	  </main>
 </Layout>
