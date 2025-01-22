@@ -1,22 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro'
+import barcodeSvg from "../icons/barcode.svg";
 
 const components = [
   {
     title: "Códigos de barras",
     description: "Diferentes códigos de barras para representar información.",
-    href: "barcode"
+    href: "barcode",
+	icon: barcodeSvg
   },
   {
     title: "Grafica",
     description: "Componente para la representación de graficas",
-    href: "/charts"
+    href: "/charts",
+	icon: barcodeSvg
+
   },
   {
-    title: "",
-    description: "",
-    href: "/"
+    title: "Tabla",
+    description: "Componentes de tablas personalizadas",
+    href: "/table",
+	icon: barcodeSvg
+
   }
 ];
 ---
@@ -38,6 +44,7 @@ const components = [
 				title={component.title}
 				href={component.href}
 				description={component.description}
+				icon={component.icon}
 				/>
 			))}
 		  </div>
